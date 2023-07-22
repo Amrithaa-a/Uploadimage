@@ -1,0 +1,33 @@
+﻿@model Uploadimage.Models.Image
+
+@{
+    ViewBag.Title = "View";
+}
+
+<main aria-labelledby="title">
+    <div class="container mt-5">
+        <div class="card p-4 rounded-lg shadow">
+            <h2 class="card-title text-center">Inserted image</h2>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Title:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Title)</dd>
+
+                        <dt class="col-sm-4">Image:</dt>
+                        <dd class="col-sm-8">
+                            <img src="@Url.Content(Model.ImagePath)" class="img-thumbnail" width="250" height="250" />
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="@Url.Action("Edit", new { id = Model.ImageID })" class="btn btn-primary">Edit</a>
+                <a href="@Url.Action("Index")" class="btn btn-light">Back to List</a>
+            </div>
+        </div>
+    </div>
+</main>
